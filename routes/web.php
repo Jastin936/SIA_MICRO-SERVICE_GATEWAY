@@ -10,7 +10,7 @@ $router->get('/', function () use ($router) {
 $router->group(['middleware' => 'gateway.auth'], function () use ($router) {
     // API GATEWAY ROUTES FOR SITE1 USERS
     $router->get('/users1', 'User1Controller@index');
-    $router->post('/users1', 'User1Controller@add');
+    $router->post('/users1', 'User1Controller@addUser');
     $router->get('/users1/{id}', 'User1Controller@show');
     $router->put('/users1/{id}', 'User1Controller@update');
     $router->patch('/users1/{id}', 'User1Controller@update');
@@ -18,7 +18,7 @@ $router->group(['middleware' => 'gateway.auth'], function () use ($router) {
 
     // API GATEWAY ROUTES FOR SITE2 USERS
     $router->get('/users2', 'User2Controller@index');
-    $router->post('/users2', 'User2Controller@add');
+    $router->post('/users2', 'User2Controller@addUser');
     $router->get('/users2/{id}', 'User2Controller@show');
     $router->put('/users2/{id}', 'User2Controller@update');
     $router->patch('/users2/{id}', 'User2Controller@update');
